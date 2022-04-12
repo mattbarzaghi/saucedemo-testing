@@ -9,7 +9,8 @@ import org.junit.runner.RunWith;
         features="src/test/resources/features",
         glue={"StepDefinitions", "Environment"},
         tags = "@automated",
-        plugin = {"pretty", "html:result/html_report.html", "json:result/result.json", "junit:result/junit.xml", "rerun:result/failed_tests.txt"}
+        plugin = {"pretty", "html:result/html_report.html", "json:result/result.json", "junit:result/junit.xml", "rerun:result/failed_tests.txt"},
+        publish = true
 )
 public class TestRunner {
 }
