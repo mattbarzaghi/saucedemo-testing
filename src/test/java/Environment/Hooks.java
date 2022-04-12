@@ -23,7 +23,7 @@ public class Hooks {
     public void browserSetup(){
 
         ChromeOptions options = new ChromeOptions();
-        //options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
