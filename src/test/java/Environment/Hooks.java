@@ -26,7 +26,7 @@ public class Hooks {
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-        System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
     }
