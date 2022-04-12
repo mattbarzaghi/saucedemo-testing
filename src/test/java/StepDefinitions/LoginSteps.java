@@ -4,10 +4,14 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import static Environment.Hooks.getDriver;
+import static org.junit.Assert.assertEquals;
+
 public class LoginSteps {
 
     @Given("user is on login page")
     public void user_is_on_login_page() {
+        assertEquals("https://www.saucedemo.com/", getDriver().getCurrentUrl());
     }
 
     @When("user enters username and password")
