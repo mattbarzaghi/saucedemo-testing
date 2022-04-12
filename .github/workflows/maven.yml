@@ -22,5 +22,10 @@ jobs:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
+
+    - name: Check Xvfb
+      run: |
+        xdpyinfo -display :0 >/dev/null 2>&1 && echo "In use" || echo "Free"
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
