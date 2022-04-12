@@ -22,9 +22,11 @@ public class Hooks {
     @Before
     public void browserSetup(){
 
-        System.out.println("Setting up Chrome Browser driver...");
-        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        //options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        System.setProperty("webdriver.chrome.driver", "lib/chromedriver.exe");
         driver = new ChromeDriver(options);
         driver.get("https://www.saucedemo.com/");
     }
